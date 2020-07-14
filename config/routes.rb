@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  # root "static#home"
+
   get 'static/home'
 
   get 'static/help'
 
   get 'static/about'
 
-  root "application#hello"
+  get 'static/contact'
+
 end
