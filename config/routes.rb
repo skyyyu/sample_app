@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
-  get 'user/new'
-
   root "static#home"
   get  '/help',    to: 'static#help', as: 'helf'
-
   get '/about', to:'static#about'
-
   get '/contact', to:'static#contact'
-
   get '/signup',  to:'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
-  post '/signup', to: 'users#create'
   resources :users
 end
